@@ -1,3 +1,11 @@
+<?php
+
+include "./functions.php";
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +22,47 @@
 </head>
 
 <body>
+
+
+    <div class="container">
+        <h1 class="text-center display-2 fw-bold py-4">Password Generator</h1>
+
+
+        <div>
+            <form method="GET">
+
+                <div class="row flex-column justify-content-center">
+                    <div class="col">
+
+                        <select name="passwordLength" class="form-select m-auto w-50 mt-4" aria-label="Default select example">
+                            <option hidden selected value="0">Quanto vuoi sia lunga la password?</option>
+                            <option value="8">8 lettere</option>
+                            <option value="9">9 lettere</option>
+                            <option value="10">10 lettere</option>
+                            <option value="11">11 lettere</option>
+                            <option value="12">12 lettere</option>
+                            <option value="13">13 lettere</option>
+                            <option value="14">14 lettere</option>
+                            <option value="15">15 lettere</option>
+                            <option value="16">16 lettere</option>
+                        </select>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4 w-auto" style="margin: auto;">Genera password</button>
+
+
+                </div>
+
+            </form>
+            <?php
+            if ($passwordLength != 0) {
+            ?>
+                <div class="text-center pt-5">Password: <?php echo $randomPassword ?></div>
+            <?php
+            }
+            ?>
+        </div>
+    </div>
 
 </body>
 
